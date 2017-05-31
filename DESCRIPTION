@@ -1,0 +1,10 @@
+Package: Opener5
+Title: Read bibliographic data sets from WOS, TI, and FS.
+Version: 0.0.0.9000
+Authors@R: person("Cristian", "Mejia", email = "cristianmejia00@gmail.com", role = c("aut", "cre"))
+Description: It read data sets of bibliographic data: Academic articles from the Web of Science, patent data from Thomson Innovation, or generic datasets having a header.
+Depends: R (>= 3.3.2), data.table
+License: MIT
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 6.0.1.9000
