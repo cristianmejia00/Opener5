@@ -105,6 +105,7 @@ read_from_fukan <- function(path_to_file) {
 #' read_from_others_csv(file.choose())
 read_from_others_csv <- function(path_to_file) {
   my_data <- fread(path_to_file
+                   , fill = TRUE
                    , header = TRUE
                    , stringsAsFactors = FALSE
                    , quote = ''
