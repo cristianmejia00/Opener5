@@ -7,8 +7,15 @@
 #' @examples
 #' read_from_wos(file.choose())
 read_from_wos <- function(path_to_file) {
-  my_data <- read.table(path_to_file, header=T, sep="\t", fill= T, quote ="", 
-             row.names = NULL, stringsAsFactors = F, check.names=F)
+  my_data <- read.table(path_to_file
+                        , header=T
+                        , sep="\t"
+                        , fill= T
+                        , quote =""
+                        , row.names = NULL
+                        , stringsAsFactors = F
+                        , check.names=F
+                       )
   colnames(my_data) <- c("PT", colnames(data)[3:length(colnames(data))], "END")
   my_data["END"] <- NULL
   return(my_data)
@@ -26,13 +33,18 @@ read_from_wos <- function(path_to_file) {
 #' @examples
 #' read_from_ti(file.choose())
 read_from_ti <- function(path_to_file, skip = 1) {
-  my_data <- read.csv(path_to_file, skip = skip, header = TRUE, check.names = FALSE, stringsAsFactors = FALSE)
+  my_data <- read.csv(path_to_file
+                      , skip = skip
+                      , header = TRUE
+                      , check.names = FALSE
+                      , stringsAsFactors = FALSE
+                     )
   
   #Column displacement correction
   first_column <- row.names(my_data)
-  data2 = cbind(first_column, my_data)
-  data2$first_column = as.character(data2$first_column)
-  names(data2) = c(names(my_data), "final_column" )
+  data2 <- cbind(first_column, my_data)
+  data2$first_column <- as.character(data2$first_column)
+  names(data2) <- c(names(my_data), "final_column" )
   my_data <- unique(data2[,-56])
   rm(data2)
   return(my_data)
@@ -73,7 +85,11 @@ read_from_ti_fast <- function(path_to_file, skip = 1) {
 #' @examples
 #' read_from_fukan(file.choose())
 read_from_fukan <- function(path_to_file) {
-  my_data <- fread(path_to_file, header = TRUE, stringsAsFactors = FALSE, quote = "")
+  my_data <- fread(path_to_file
+                   , header = TRUE
+                   , stringsAsFactors = FALSE
+                   , quote = ""
+                  )
   return(my_data)
 }
 
@@ -88,7 +104,12 @@ read_from_fukan <- function(path_to_file) {
 #' @examples
 #' read_from_others_csv(file.choose())
 read_from_others_csv <- function(path_to_file) {
-  my_data <- fread(file.choose(), header = TRUE, stringsAsFactors = FALSE, quote = '')
+  my_data <- fread(path_to_file
+                   , header = TRUE
+                   , stringsAsFactors = FALSE
+                   , quote = ''
+                  )
+  return(my_data)
 }
 
 
@@ -104,7 +125,13 @@ read_from_others_csv <- function(path_to_file) {
 #' @examples
 #' read_from_others_tsv(file.choose())
 read_from_others_tsv <- function(path_to_file) {
-  my_data <- read.csv(file.choose(), header = TRUE, sep = "\t", check.names = FALSE, stringsAsFactors = FALSE)
+  my_data <- read.csv(path_to_file
+                      , header = TRUE
+                      , sep = "\t"
+                      , check.names = FALSE
+                      , stringsAsFactors = FALSE
+                     )
+  return(my_data)
 }
 
 
@@ -120,10 +147,11 @@ read_from_others_tsv <- function(path_to_file) {
 #' @examples
 #' write_for_fukan(my_data, 'my_data.tsv')
 write_for_fukan <- function(data_file, file_name) {
-  write.table(data_file, 
-              file = file_name, 
-              row.names = FALSE, 
-              sep = "\t", 
-              quote = FALSE)
+  write.table(data_file
+              , file = file_name
+              , row.names = FALSE
+              , sep = "\t"
+              ,  quote = FALSE
+             )
 }
 
