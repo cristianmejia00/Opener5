@@ -16,7 +16,7 @@ read_from_wos <- function(path_to_file) {
                         , stringsAsFactors = F
                         , check.names=F
                        )
-  colnames(my_data) <- c("PT", colnames(data)[3:length(colnames(data))], "END")
+  colnames(my_data) <- c("PT", colnames(my_data)[3:length(colnames(my_data))], "END")
   my_data["END"] <- NULL
   return(my_data)
 }
