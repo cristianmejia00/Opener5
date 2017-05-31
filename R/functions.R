@@ -108,7 +108,6 @@ read_from_others_csv <- function(path_to_file) {
                    , fill = TRUE
                    , header = TRUE
                    , stringsAsFactors = FALSE
-                   , quote = ""
                   )
   return(my_data)
 }
