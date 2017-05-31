@@ -18,4 +18,4 @@ This package reads 4 types of files:
 
 
 
-*This is no other thing that the same read functions in R (readtable, fread) but with the parameters adjusted for the type of files I constantly use.*
+*This is no other thing that the same read functions in R (readtable, fread) with the parameters adjusted for the type of files I constantly use.*
